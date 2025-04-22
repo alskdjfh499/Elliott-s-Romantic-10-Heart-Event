@@ -1,0 +1,5 @@
+{
+    "config.Cutscene Time.name": "Cutscene Time",
+    "config.Cutscene Time.values.day": "day",
+    "config.Cutscene Time.values.night": "night"
+}

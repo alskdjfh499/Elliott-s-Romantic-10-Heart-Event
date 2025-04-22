@@ -1,0 +1,5 @@
+{
+    "config.Cutscene Time.name": "过场动画时间",
+    "config.Cutscene Time.values.day": "白天",
+    "config.Cutscene Time.values.night": "晚上"
+}

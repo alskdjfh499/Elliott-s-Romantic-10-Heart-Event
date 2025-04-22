@@ -1,0 +1,90 @@
+{
+    "Format": "2.6.0",
+    "ConfigSchema": {
+        "Cutscene Time": {
+            "AllowValues": "day, night",
+            "Default": "night"
+        }
+    },
+    "Changes": [
+        {
+            "Action": "EditData",
+            "Target": "Data/Mail",
+            "Entries": {
+                "elliottBoat": "在一个晴朗的早晨，来沙滩那里的码头来见我。我有些想法想和你分享。^   -艾利欧特[#]艾利欧特的便条"
+            },
+            "When": {
+                "Cutscene Time": "day"
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Mail",
+            "Entries": {
+                "elliottBoat": "在一个晴朗的夜晚，来沙滩那里的码头来见我。我有些想法想和你分享。^   -艾利欧特[#]艾利欧特的便条"
+            },
+            "When": {
+                "Cutscene Time": "night"
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Events/Beach",
+            "Entries": {
+                "43/f Elliott 2500/w sunny/t 700 1300/G !IS_PASSIVE_FESTIVAL_TODAY SquidFest": null,
+                "{{ModId}}_10Heart_Event_Day/f Elliott 2500/t 700 1200/w sunny/G !IS_PASSIVE_FESTIVAL_TODAY SquidFest": "ocean/-1000 -1000/farmer 13 16 2 Elliott 13 27 1/specificTemporarySprite elliottBoat/skippable/viewport 17 26 clamp true/move farmer 0 8 2/faceDirection Elliott 0/speak Elliott \"早上好。$1\"/move farmer 0 2 2/faceDirection Elliott 1/faceDirection farmer 1/speak Elliott \"看……我把那艘停在我家旁边的旧划艇修好了。#$b#也许我该试试木工。$1\"/pause 400/faceDirection Elliott 0/pause 500/speak Elliott \"@……你愿意一同参加他的处女航吗？$l\"/faceDirection farmer 2/question fork1 \"(要上船吗？)#是#否\"/fork NoToElliott/emote farmer 32/pause 500/speak Elliott \"太好了！那我们出发吧。$1\"/globalFade/viewport -1000 -1000/changeToTemporaryMap ElliottSea false/playSound wateringCan/pause 1000/playSound wateringCan/playMusic 50s/warp farmer 26 20/positionOffset farmer 0 8/warp Elliott 26 20/showFrame Elliott 25/positionOffset Elliott 0 60/viewport 25 20 true/pause 5000/speak Elliott \"我的书已经出版一段时间了……虽然不是畅销书，但评论家们给出了一些好评。#$b#如果没有你的精神支持，我真的无法完成它。$l\"/pause 1000/speak Elliott \"其实，这完全不是真的。无论如何我都会完成它。$h#$b#但我很感激你相信我……相信我的愿景。还有……\"/pause 500/speak Elliott \"嗯……@？我该怎么说呢……$8\"/emote Elliott 40/speak Elliott \"我知道我们在一起的时间还不长……但我们需要对彼此诚实。$2\"/emote farmer 28/speak Elliott \"不！我不是要和你分手！$8#$b#事实上……恰恰相反。$l\"/pause 1000/emote Elliott 40/pause 500/speak Elliott \"……让我想想，我该怎么说呢……？$8#$b#这一次，我发现自己词穷了……$2\"/playMusic elliottPiano/pause 2500/speak Elliott \"从你来到山谷的那一刻起，我就觉得找到了知己。#$b#恐怕我已经完全爱上了你。$4\"/emote farmer 16/question fork1 \"……#我也有同样的感觉。（亲吻艾利欧特。）#我们进展得太快了……\"/fork tooBold/speak Elliott \"你……你真的这么想？$8\"/emote farmer 20/speak Elliott \"我曾希望如此，但我——哦！$4\" /showFrame Elliott 35/screenFlash 1/warp Elliott 26 20/positionOffset Elliott 24 8/positionOffset farmer -20 16/faceDirection farmer 1 true/showFrame 101/specificTemporarySprite heart 26 20/playSound dwop/pause 1700/speak Elliott \"我美丽的@……$4^我可爱的@……$4#$b#我不记得自己曾像现在这样开心过。$4\"/globalFade/viewport -1000 -1000/speak Elliott \"我们最好在南风刮起来之前回去。$l\"/pause 1000/speak Elliott \"从这里看山谷……它终于有了“家”的样子。\"/pause 1000/speak Elliott \"*叹息*……当你坠入爱河时，阳光确实更加灿烂……$4\"/end dialogue Elliott \"你想让我再说一遍吗？乐意之至，亲爱的。$1#$b#%艾利欧特将你拉近。#$b#我爱你，@。$4\"",
+                "NoToElliott": "emote Elliott 16/pause 800/faceDirection Elliott 1/showFrame Elliott 31/pause 1000/speak Elliott \"我明白了。$2\"/emote Elliott 40/pause 1200/move farmer 0 -10 0 true/pause 800/end dialogue Elliott \"……$a\""
+            },
+            "When": {
+                "Cutscene Time": "day",
+                "HasMod: |contains=Cherry.PlatonicRelationships": false
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Events/Beach",
+            "Entries": {
+                "43/f Elliott 2500/w sunny/t 700 1300/G !IS_PASSIVE_FESTIVAL_TODAY SquidFest": null,
+                "{{ModId}}_10Heart_Event_Day_PR/f Elliott 2500/t 700 1200/w sunny/G !IS_PASSIVE_FESTIVAL_TODAY SquidFest": "ocean/-1000 -1000/farmer 13 16 2 Elliott 13 27 1/specificTemporarySprite elliottBoat/skippable/viewport 17 26 clamp true/move farmer 0 8 2/faceDirection Elliott 0/speak Elliott \"早上好。$1\"/move farmer 0 2 2/faceDirection Elliott 1/faceDirection farmer 1/speak Elliott \"看……我把那艘停在我家旁边的旧划艇修好了。#$b#也许我该试试木工。$1\"/pause 400/faceDirection Elliott 0/pause 500/speak Elliott \"@……你愿意一同参加他的处女航吗？$l\"/faceDirection farmer 2/question fork1 \"(要上船吗？)#是#否\"/fork NoToElliott/emote farmer 32/pause 500/speak Elliott \"太好了！那我们出发吧。$1\"/globalFade/viewport -1000 -1000/changeToTemporaryMap ElliottSea false/playSound wateringCan/pause 1000/playSound wateringCan/playMusic 50s/warp farmer 26 20/positionOffset farmer 0 8/warp Elliott 26 20/showFrame Elliott 25/positionOffset Elliott 0 60/viewport 25 20 true/pause 5000/speak Elliott \"我的书已经出版一段时间了……虽然不是畅销书，但评论家们给出了一些好评。#$b#如果没有你的精神支持，我真的无法完成它。$l\"/pause 1000/speak Elliott \"其实，这完全不是真的。无论如何我都会完成它。$h#$b#但我很感激你相信我……相信我的愿景。还有……\"/pause 500/speak Elliott \"嗯……@？我该怎么说呢……$8\"/emote Elliott 40/speak Elliott \"我知道我们在一起的时间还不长……但我们需要对彼此诚实。$2\"/emote farmer 28/speak Elliott \"不！我不是要和你分手！$8#$b#事实上……恰恰相反。$l\"/pause 1000/emote Elliott 40/pause 500/speak Elliott \"……让我想想，我该怎么说呢……？$8#$b#这一次，我发现自己词穷了……$2\"/playMusic elliottPiano/pause 2500/speak Elliott \"从你来到山谷的那一刻起，我就觉得找到了知己。#$b#恐怕我已经完全爱上了你。$4\"/emote farmer 16/question fork1 \"……#我也有同样的感觉。（亲吻艾利欧特。）#我们进展得太快了……\"/fork tooBold/speak Elliott \"你……你真的这么想？$8\"/emote farmer 20/speak Elliott \"我曾希望如此，但我——哦！$4\" /showFrame Elliott 35/screenFlash 1/warp Elliott 26 20/positionOffset Elliott 24 8/positionOffset farmer -20 16/faceDirection farmer 1 true/showFrame 101/specificTemporarySprite heart 26 20/playSound dwop/pause 1700/speak Elliott \"我美丽的@……^我可爱的@……$4#$b#我不记得自己曾像现在这样开心过。$4\"/globalFade/viewport -1000 -1000/speak Elliott \"我们最好在南风刮起来之前回去。$l\"/pause 1000/speak Elliott \"从这里看山谷……它终于有了“家”的样子。\"/pause 1000/speak Elliott \"*叹息*……当你坠入爱河时，阳光确实更加灿烂……$4\"/end dialogue Elliott \"你想让我再说一遍吗？乐意之至，亲爱的。$1#$b#%艾利欧特将你拉近。#$b#我爱你，@。$4\"",
+                "NoToElliott": "emote Elliott 16/pause 800/faceDirection Elliott 1/showFrame Elliott 31/pause 1000/speak Elliott \"我明白了。$2\"/emote Elliott 40/pause 1200/move farmer 0 -10 0 true/pause 800/end dialogue Elliott \"……$a\""
+            },
+            "When": {
+                "Cutscene Time": "day",
+                "HasMod: |contains=Cherry.PlatonicRelationships": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Events/Beach",
+            "Entries": {
+                "43/f Elliott 2500/w sunny/t 700 1300/G !IS_PASSIVE_FESTIVAL_TODAY SquidFest": null,
+                "{{ModId}}_10Heart_Event_Night/f Elliott 2500/t 2100 2600/w sunny/G !IS_PASSIVE_FESTIVAL_TODAY SquidFest": "ocean/-1000 -1000/farmer 13 16 2 Elliott 13 27 1/specificTemporarySprite elliottBoat/addLantern 735 13 28 2/skippable/viewport 17 26 clamp true/move farmer 0 8 2/faceDirection Elliott 0/speak Elliott \"晚上好。$1\"/move farmer 0 2 2/faceDirection Elliott 1/faceDirection farmer 1/speak Elliott \"看……我把那艘停在我家旁边的旧划艇修好了。#$b#也许我该试试木工。$1\"/pause 400/faceDirection Elliott 0/pause 500/speak Elliott \"@……你愿意一同参加他的处女航吗？$l\"/faceDirection farmer 2/question fork1 \"(要上船吗？)#是#否\"/fork NoToElliott/emote farmer 32/pause 500/speak Elliott \"太好了！那我们出发吧。$1\"/globalFade/viewport -1000 -1000/changeToTemporaryMap ElliottSea false/playSound wateringCan/pause 1000/playSound wateringCan/playMusic 50s/warp farmer 26 20/positionOffset farmer 0 8/warp Elliott 26 20/showFrame Elliott 25/positionOffset Elliott 0 60/viewport 25 20 true/addLantern 735 26 20 2/pause 5000/speak Elliott \"我的书已经出版一段时间了……虽然不是畅销书，但评论家们给出了一些好评。#$b#如果没有你的精神支持，我真的无法完成它。$l\"/pause 1000/speak Elliott \"其实，这完全不是真的。无论如何我都会完成它。$h#$b#但我很感激你相信我……相信我的愿景。还有……\"/pause 500/speak Elliott \"嗯……@？我该怎么说呢……$8\"/emote Elliott 40/speak Elliott \"我知道我们在一起的时间还不长……但我们需要对彼此诚实。$2\"/emote farmer 28/speak Elliott \"不！我不是要和你分手！$8#$b#事实上……恰恰相反。$l\"/pause 1000/emote Elliott 40/pause 500/speak Elliott \"……让我想想，我该怎么说呢……？$8#$b#这一次，我发现自己词穷了……$2\"/playMusic elliottPiano/pause 2500/speak Elliott \"从你来到山谷的那一刻起，我就觉得找到了知己。#$b#恐怕我已经完全爱上了你。$4\"/emote farmer 16/question fork1 \"……#我也有同样的感觉。（亲吻艾利欧特。）#我们进展得太快了……\"/fork tooBold/speak Elliott \"你……你真的这么想？$8\"/emote farmer 20/speak Elliott \"我曾希望如此，但我——哦！$4\" /showFrame Elliott 35/screenFlash 1/warp Elliott 26 20/positionOffset Elliott 24 8/positionOffset farmer -20 16/faceDirection farmer 1 true/showFrame 101/specificTemporarySprite heart 26 20/playSound dwop/pause 1700/speak Elliott \"我美丽的@……$4^我可爱的@……$4#$b#我不记得自己曾像现在这样开心过。$4\"/globalFade/viewport -1000 -1000/speak Elliott \"我们最好在南风刮起来之前回去。$l\"/pause 1000/speak Elliott \"从这里看山谷……它终于有了“家”的样子。\"/pause 1000/speak Elliott \"*叹息*……当你坠入爱河时，星星确实更加闪耀……$4\"/end dialogue Elliott \"你想让我再说一遍吗？乐意之至，亲爱的。$1#$b#%艾利欧特将你拉近。#$b#我爱你，@。$4\"",
+                "NoToElliott": "emote Elliott 16/pause 800/faceDirection Elliott 1/showFrame Elliott 31/pause 1000/speak Elliott \"我明白了。$2\"/emote Elliott 40/pause 1200/move farmer 0 -10 0 true/pause 800/end dialogue Elliott \"……$a\""
+            },
+            "When": {
+                "Cutscene Time": "night",
+                "HasMod: |contains=Cherry.PlatonicRelationships": false
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Events/Beach",
+            "Entries": {
+                "43/f Elliott 2500/w sunny/t 700 1300/G !IS_PASSIVE_FESTIVAL_TODAY SquidFest": null,
+                "{{ModId}}_10Heart_Event_Night_PR/f Elliott 2500/t 2100 2600/w sunny/G !IS_PASSIVE_FESTIVAL_TODAY SquidFest": "ocean/-1000 -1000/farmer 13 16 2 Elliott 13 27 1/specificTemporarySprite elliottBoat/addLantern 735 13 28 2/skippable/viewport 17 26 clamp true/move farmer 0 8 2/faceDirection Elliott 0/speak Elliott \"晚上好。$1\"/move farmer 0 2 2/faceDirection Elliott 1/faceDirection farmer 1/speak Elliott \"看……我把那艘停在我家旁边的旧划艇修好了。#$b#也许我该试试木工。$1\"/pause 400/faceDirection Elliott 0/pause 500/speak Elliott \"@……你愿意一同参加他的处女航吗？$l\"/faceDirection farmer 2/question fork1 \"(要上船吗？)#是#否\"/fork NoToElliott/emote farmer 32/pause 500/speak Elliott \"太好了！那我们出发吧。$1\"/globalFade/viewport -1000 -1000/changeToTemporaryMap ElliottSea false/playSound wateringCan/pause 1000/playSound wateringCan/playMusic 50s/warp farmer 26 20/positionOffset farmer 0 8/warp Elliott 26 20/showFrame Elliott 25/positionOffset Elliott 0 60/viewport 25 20 true/addLantern 735 26 20 2/pause 5000/speak Elliott \"我的书已经出版一段时间了……虽然不是畅销书，但评论家们给出了一些好评。#$b#如果没有你的精神支持，我真的无法完成它。$l\"/pause 1000/speak Elliott \"其实，这完全不是真的。无论如何我都会完成它。$h#$b#但我很感激你相信我……相信我的愿景。还有……\"/pause 500/speak Elliott \"嗯……@？我该怎么说呢……$8\"/emote Elliott 40/speak Elliott \"我知道我们在一起的时间还不长……但我们需要对彼此诚实。$2\"/emote farmer 28/speak Elliott \"不！我不是要和你分手！$8#$b#事实上……恰恰相反。$l\"/pause 1000/emote Elliott 40/pause 500/speak Elliott \"……让我想想，我该怎么说呢……？$8#$b#这一次，我发现自己词穷了……$2\"/playMusic elliottPiano/pause 2500/speak Elliott \"从你来到山谷的那一刻起，我就觉得找到了知己。#$b#恐怕我已经完全爱上了你。$4\"/emote farmer 16/question fork1 \"……#我也有同样的感觉。（亲吻艾利欧特。）#我们进展得太快了……\"/fork tooBold/speak Elliott \"你……你真的这么想？$8\"/emote farmer 20/speak Elliott \"我曾希望如此，但我——哦！$4\" /showFrame Elliott 35/screenFlash 1/warp Elliott 26 20/positionOffset Elliott 24 8/positionOffset farmer -20 16/faceDirection farmer 1 true/showFrame 101/specificTemporarySprite heart 26 20/playSound dwop/pause 1700/speak Elliott \"我美丽的@……$4^我可爱的@……$4#$b#我不记得自己曾像现在这样开心过。$4\"/globalFade/viewport -1000 -1000/speak Elliott \"我们最好在南风刮起来之前回去。$l\"/pause 1000/speak Elliott \"从这里看山谷……它终于有了“家”的样子。\"/pause 1000/speak Elliott \"*叹息*……当你坠入爱河时，星星确实更加闪耀……$4\"/end dialogue Elliott \"你想让我再说一遍吗？乐意之至，亲爱的。$1#$b#%艾利欧特将你拉近。#$b#我爱你，@。$4\"",
+                "NoToElliott": "emote Elliott 16/pause 800/faceDirection Elliott 1/showFrame Elliott 31/pause 1000/speak Elliott \"我明白了。$2\"/emote Elliott 40/pause 1200/move farmer 0 -10 0 true/pause 800/end dialogue Elliott \"……$a\""
+            },
+            "When": {
+                "Cutscene Time": "night",
+                "HasMod: |contains=Cherry.PlatonicRelationships": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Events/Temp",
+            "Entries": {
+                "tooBold": "/playMusic ocean/emote Elliott 28/pause 800/speak Elliott \"我表现得太过急切了，是吗？$8\"/emote farmer 60/pause 800/speak Elliott \"我明白了。$2#$b#抱歉。让我带我们回岸上去吧。$7\"/globalFade/viewport -1000 -1000/playSound wateringCan/pause 1000/playSound wateringCan/end dialogue Elliott \"%艾利欧特对你微笑，但有些勉强。他似乎有些尴尬……\""
+            }
+        }
+    ]
+}
